@@ -70,7 +70,7 @@
         android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="your Name"
+        android:hint="Bus No"
         android:layout_below="@+id/change_picture_btn"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
@@ -82,7 +82,7 @@
         android:id="@+id/phone_number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="your Phone Number"
+        android:hint="Bus Type"
         android:inputType="number"
         android:layout_below="@+id/name"
         android:layout_marginStart="20dp"
@@ -95,12 +95,11 @@
         android:id="@+id/driver_car_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="your Car Name"
         android:layout_below="@+id/phone_number"
         android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
         android:layout_marginTop="15dp"
-        android:visibility="gone"
-        />
+        android:layout_marginEnd="20dp"
+        android:hint="Registration number"
+         />
 
 </RelativeLayout>

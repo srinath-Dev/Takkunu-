@@ -154,8 +154,7 @@ public class DriverMapsActivity extends FragmentActivity implements OnMapReadyCa
                     //getting assigned customer location
                     GetAssignedCustomerPickupLocation();
 
-                    relativeLayout.setVisibility(View.VISIBLE);
-                    getAssignedCustomerInformation();
+
                 }
                 else
                 {

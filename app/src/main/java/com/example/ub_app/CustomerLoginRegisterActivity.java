@@ -57,7 +57,7 @@ public class CustomerLoginRegisterActivity extends AppCompatActivity {
 
                 if(currentUser != null)
                 {
-                    Intent intent = new Intent(CustomerLoginRegisterActivity.this, CustomerMapsActivity.class);
+                    Intent intent = new Intent(CustomerLoginRegisterActivity.this, FromToActivity.class);
                     startActivity(intent);
                 }
             }
@@ -85,7 +85,7 @@ public class CustomerLoginRegisterActivity extends AppCompatActivity {
             {
                 CreateCustomerAccount.setVisibility(View.INVISIBLE);
                 LoginCustomerButton.setVisibility(View.INVISIBLE);
-                TitleCustomer.setText("Driver Registration");
+                TitleCustomer.setText("");
 
                 RegisterCustomerButton.setVisibility(View.VISIBLE);
                 RegisterCustomerButton.setEnabled(true);
@@ -126,7 +126,7 @@ public class CustomerLoginRegisterActivity extends AppCompatActivity {
                                 customersDatabaseRef = FirebaseDatabase.getInstance().getReference().child("Users").child("Customers").child(currentUserId);
                                 customersDatabaseRef.setValue(true);
 
-                                Intent intent = new Intent(CustomerLoginRegisterActivity.this, CustomerMapsActivity.class);
+                                Intent intent = new Intent(CustomerLoginRegisterActivity.this, FromToActivity.class);
                                 startActivity(intent);
 
                                 loadingBar.dismiss();
@@ -174,7 +174,7 @@ public class CustomerLoginRegisterActivity extends AppCompatActivity {
                             {
                                 Toast.makeText(CustomerLoginRegisterActivity.this, "Sign In , Successful...", Toast.LENGTH_SHORT).show();
 
-                                Intent intent = new Intent(CustomerLoginRegisterActivity.this, CustomerMapsActivity.class);
+                                Intent intent = new Intent(CustomerLoginRegisterActivity.this,FromToActivity.class);
                                 startActivity(intent);
 
                                 loadingBar.dismiss();

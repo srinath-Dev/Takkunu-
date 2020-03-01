@@ -179,8 +179,8 @@ public class CustomerMapsActivity extends FragmentActivity implements OnMapReady
                         DriverMarker.remove();
                     }
 
-                    CallCabCarButton.setText("Call a Cab");
-                    relativeLayout.setVisibility(View.GONE);
+                    CallCabCarButton.setText("Track the Bus");
+
                 }
                 else
                 {
@@ -202,7 +202,7 @@ public class CustomerMapsActivity extends FragmentActivity implements OnMapReady
                     CustomerPickUpLocation = new LatLng(LastLocation.getLatitude(), LastLocation.getLongitude());
                     PickUpMarker = mMap.addMarker(new MarkerOptions().position(CustomerPickUpLocation).title("My Location").icon(BitmapDescriptorFactory.fromResource(R.drawable.user)));
 
-                    CallCabCarButton.setText("Getting your Driver...");
+                    CallCabCarButton.setText("Bus is on the way");
                     getClosetDriverCab();
                 }
             }
@@ -239,7 +239,7 @@ public class CustomerMapsActivity extends FragmentActivity implements OnMapReady
 
                     //Show driver location on customerMapActivity
                     GettingDriverLocation();
-                    CallCabCarButton.setText("Looking for Driver Location...");
+                    CallCabCarButton.setText("Looking for Bus Location...");
                 }
             }
 
@@ -287,11 +287,11 @@ public class CustomerMapsActivity extends FragmentActivity implements OnMapReady
                             List<Object> driverLocationMap = (List<Object>) dataSnapshot.getValue();
                             double LocationLat = 0;
                             double LocationLng = 0;
-                            CallCabCarButton.setText("Driver Found");
+                            CallCabCarButton.setText("Bus Near you");
 
 
-                            relativeLayout.setVisibility(View.VISIBLE);
-                            getAssignedDriverInformation();
+
+
 
 
                             if(driverLocationMap.get(0) != null)
@@ -323,14 +323,14 @@ public class CustomerMapsActivity extends FragmentActivity implements OnMapReady
 
                             if (Distance < 90)
                             {
-                                CallCabCarButton.setText("Driver's Reached");
+                                CallCabCarButton.setText("Bus Reached");
                             }
                             else
                             {
-                                CallCabCarButton.setText("Driver Found: " + String.valueOf(Distance));
+                                CallCabCarButton.setText("Bus Near you: " + String.valueOf(Distance));
                             }
 
-                            DriverMarker = mMap.addMarker(new MarkerOptions().position(DriverLatLng).title("your driver is here").icon(BitmapDescriptorFactory.fromResource(R.drawable.car)));
+                            DriverMarker = mMap.addMarker(new MarkerOptions().position(DriverLatLng).title("your bus is here").icon(BitmapDescriptorFactory.fromResource(R.drawable.orginalbus)));
                         }
                     }
 
@@ -397,7 +397,7 @@ public class CustomerMapsActivity extends FragmentActivity implements OnMapReady
 
         LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-        mMap.animateCamera(CameraUpdateFactory.zoomTo(12));
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(16));
     }
 
 

@@ -82,7 +82,7 @@ public class DriverLoginRegisterActivity extends AppCompatActivity {
             {
                 CreateDriverAccount.setVisibility(View.INVISIBLE);
                 LoginDriverButton.setVisibility(View.INVISIBLE);
-                TitleDriver.setText("Driver Registration");
+                TitleDriver.setText("");
 
                 RegisterDriverButton.setVisibility(View.VISIBLE);
                 RegisterDriverButton.setEnabled(true);
@@ -123,7 +123,7 @@ public class DriverLoginRegisterActivity extends AppCompatActivity {
                                 driversDatabaseRef = FirebaseDatabase.getInstance().getReference().child("Users").child("Drivers").child(currentUserId);
                                 driversDatabaseRef.setValue(true);
 
-                                Intent intent = new Intent(DriverLoginRegisterActivity.this, DriverMapsActivity.class);
+                                Intent intent = new Intent(DriverLoginRegisterActivity.this, Profile_bus.class);
                                 startActivity(intent);
 
                                 loadingBar.dismiss();
